@@ -23,6 +23,7 @@ public class NameInputValidator : MonoBehaviour
             errorText.enabled = true;
         } else
         {
+            ScoreManager.GetInstance().SetCurrentName(trimmedName);
             // Main scene is set at index 1
             SceneManager.LoadScene(1);
         }

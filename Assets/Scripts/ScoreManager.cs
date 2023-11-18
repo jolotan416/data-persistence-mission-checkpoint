@@ -1,18 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private static ScoreManager INSTANCE = null;
+
+    public static ScoreManager GetInstance()
     {
-        
+        return INSTANCE;
     }
 
-    // Update is called once per frame
-    void Update()
+    private string currentName = "";
+
+    private void Awake()
     {
-        
+        if (INSTANCE != null)
+        {
+            return;
+        }
+
+        INSTANCE = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public void SetCurrentName(string name)
+    {
+        this.currentName = name;
+    }
+
+    public string GetCurrentName()
+    {
+        return currentName;
     }
 }
