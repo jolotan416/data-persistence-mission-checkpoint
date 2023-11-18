@@ -78,4 +78,10 @@ public class MainManager : MonoBehaviour
         m_GameOver = true;
         GameOverText.SetActive(true);
     }
+
+    public void GoToMenu()
+    {
+        // Menu scene is set at index 0
+        SceneManager.LoadScene(0);
+    }
 }
