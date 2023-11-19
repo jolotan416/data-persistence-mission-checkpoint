@@ -922,7 +922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameErrorText: {fileID: 1425849446}
-  nameText: {fileID: 611570387}
+  nameInputField: {fileID: 1180562260}
 --- !u!1 &963495398
 GameObject:
   m_ObjectHideFlags: 0

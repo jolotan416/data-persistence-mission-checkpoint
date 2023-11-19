@@ -12,16 +12,17 @@ public class MenuManager : MonoBehaviour
     private TextMeshProUGUI nameErrorText;
 
     [SerializeField]
-    private TextMeshProUGUI nameText;
+    private TMP_InputField nameInputField;
 
     public void Start()
     {
         nameErrorText.enabled = false;
+        nameInputField.text = ScoreManager.GetInstance().GetCurrentName();
     }
 
     public void ValidateName()
     {
-        string trimmedName = nameText.text.Trim();
+        string trimmedName = nameInputField.text.Trim(); ;
         if (trimmedName.Length <= 1)
         {
             nameErrorText.enabled = true;
