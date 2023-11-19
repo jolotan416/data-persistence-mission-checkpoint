@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,6 +10,7 @@ public class MainManager : MonoBehaviour
     public Rigidbody Ball;
 
     public Text ScoreText;
+    public Text HighScoreText;
     public GameObject GameOverText;
 
     [SerializeField]
@@ -41,6 +40,7 @@ public class MainManager : MonoBehaviour
             }
         }
         nameText.text = ScoreManager.GetInstance().GetCurrentName();
+        UpdateHighScore();
     }
 
     private void Update()
@@ -77,11 +77,19 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+        ScoreManager.GetInstance().NotifyFinalScore(m_Points);
+        UpdateHighScore();
     }
 
     public void GoToMenu()
     {
         // Menu scene is set at index 0
         SceneManager.LoadScene(0);
+    }
+
+    private void UpdateHighScore()
+    {
+        HighScoreData highScoreData = ScoreManager.GetInstance().GetHighScoreData();
+        HighScoreText.text = $"Best score: {highScoreData.score} - {highScoreData.playerName}";
     }
 }

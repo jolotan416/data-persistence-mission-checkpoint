@@ -678,6 +678,7 @@ MonoBehaviour:
   LineCount: 6
   Ball: {fileID: 177912862}
   ScoreText: {fileID: 188020406}
+  HighScoreText: {fileID: 2078529056}
   GameOverText: {fileID: 474497238}
   nameText: {fileID: 1697142894}
 --- !u!1 &455529321
@@ -1890,7 +1891,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Best Score: 0 []'
+  m_Text: 'Best Score: 0 - '
 --- !u!222 &2078529057
 CanvasRenderer:
   m_ObjectHideFlags: 0
